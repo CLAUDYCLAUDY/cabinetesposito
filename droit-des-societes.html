@@ -18,6 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1F5F2D">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,7 +75,7 @@ a:hover{color:var(--vert);border-color:var(--vert)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--vert);outline-offset:3px;border-radius:1px}
 
 /* ---------- structure : l'axe ---------- */
-.gabarit{max-width:1060px;margin:0 auto;padding:0 24px;position:relative}
+.gabarit{max-width:1240px;margin:0 auto;padding:0 24px;position:relative}
 @media(min-width:900px){
   .gabarit{padding:0 48px}
   .axe{position:absolute;top:0;bottom:0;left:48px;width:1px;background:var(--hairline)}
@@ -115,16 +116,16 @@ header{
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--hairline);
 }
-nav{display:flex;align-items:baseline;justify-content:space-between;padding:20px 0}
+nav{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 0}
 .marque{font-family:'Marcellus',serif;font-size:19px;font-weight:700;-webkit-text-stroke:.6px currentColor;letter-spacing:.16em;border:none;color:var(--encre)}
 .marque span{color:var(--vert);font-size:1.35em;font-weight:700;-webkit-text-stroke:1px var(--vert);line-height:0}
-.liens{display:flex;gap:30px}
+.liens{display:flex;gap:26px;flex-wrap:nowrap}
 .liens a{
   font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.14em;
-  text-transform:uppercase;border:none;color:var(--gris);
+  text-transform:uppercase;border:none;color:var(--gris);white-space:nowrap;
 }
 .liens a:hover{color:var(--vert)}
-@media(max-width:760px){.liens{display:none}}
+@media(max-width:1020px){.liens{display:none}}
 
 /* ---------- héro ---------- */
 .hero{padding:110px 0 90px}
@@ -217,9 +218,9 @@ details p{margin-top:14px;color:var(--gris)}
 .bouton:hover{background:var(--vert);color:var(--papier)}
 
 /* footer */
-footer{border-top:1px solid var(--hairline);padding:56px 0 70px;font-size:14px;color:var(--gris)}
-footer .mentions{max-width:70ch;line-height:1.8}
-footer .cab{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.12em;color:var(--vert);margin-bottom:14px}
+footer{border-top:1px solid var(--hairline);padding:34px 0 42px;font-size:12px;color:var(--gris)}
+footer .mentions{max-width:90ch;line-height:1.7;font-size:11.5px}
+footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;color:var(--vert);margin-bottom:8px}
 
 /* apparition douce */
 .revele{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
@@ -255,6 +256,32 @@ footer .cab{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.12em;co
 .contenu p,.prose p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .hero .these{text-align:left;hyphens:none}
 .place span,.article-apercu p,.liens a{text-align:left;hyphens:none}
+
+/* ---------- grand écran v3 : composition pleine largeur, sans axe ---------- */
+@media(min-width:900px){
+  .axe{display:none}
+  .contenu{margin-left:0}
+  .sur-titre::before{display:none}
+  .deux-colonnes{margin-left:0}
+}
+@media(min-width:1120px){
+  .contenu:has(> .sur-titre){display:grid;grid-template-columns:190px minmax(0,72ch);column-gap:64px;align-items:start;max-width:none}
+  .contenu:has(> .sur-titre) > *{grid-column:2}
+  .contenu:has(> .sur-titre) > .sur-titre{grid-column:1;grid-row:1;position:sticky;top:110px;margin-bottom:0;line-height:1.7;border-top:1px solid var(--marine);padding-top:14px}
+  .contenu.prose:not(:has(> .sur-titre)){margin-left:254px;max-width:72ch}
+  .hero{padding:116px 0 0}
+  .hero .contenu{display:grid;grid-template-columns:minmax(0,1.15fr) 400px;column-gap:100px;max-width:none;align-items:end}
+  .hero h1{grid-column:1;grid-row:1;font-size:clamp(76px,8.4vw,150px);letter-spacing:.05em}
+  .hero .qualite{grid-column:1;grid-row:2;margin:16px 0 0}
+  .hero .these{grid-column:2;grid-row:1/3;align-self:end;margin:0 0 12px;max-width:none;font-size:21.5px;line-height:1.62;text-align:left}
+  .linteau{margin-top:84px;padding:20px 0}
+  section{padding:104px 0}
+  .places{grid-template-columns:repeat(3,1fr)}
+}
+
+.marque{display:inline-flex;align-items:center;gap:11px}
+.marque-e{height:30px;width:auto;display:block}
+.pied-e{height:26px;width:auto;display:block;margin-bottom:12px}
 </style>
 <script type="application/ld+json">
 {
@@ -302,7 +329,7 @@ footer .cab{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.12em;co
 <header>
   <div class="gabarit">
     <nav aria-label="Navigation principale">
-      <a class="marque" href="/">ESPOSITO<span>.</span></a>
+      <a class="marque" href="/"><img src="/logo-e.png" alt="" class="marque-e" width="45" height="45">ESPOSITO<span>.</span></a>
       <div class="liens">
         <a href="/#cabinet">Le cabinet</a>
         <a href="/#expertises">Domaines</a>
@@ -392,9 +419,10 @@ footer .cab{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.12em;co
 <footer>
   <div class="gabarit">
     <div class="contenu">
+      <img src="/logo-e.png" alt="" class="pied-e" width="45" height="45">
       <p class="cab">CABINET ESPOSITO</p>
-      <p style="margin-bottom:18px"><a href="/avocat">L'avocat</a> · <a href="/droit-des-societes">Droit des sociétés</a> · <a href="/droit-des-affaires">Droit des affaires</a> · <a href="/droit-des-contrats">Droit des contrats</a> · <a href="/libertes-fondamentales">Libertés fondamentales</a> · <a href="/droit-de-l-art">Droit de l'art</a> · <a href="/honoraires">Honoraires</a> · <a href="/publications">Publications</a></p>
-      <p class="mentions">Maître Michele Esposito, avocat inscrit au Barreau de Nice. Cabinet : 35 boulevard Gambetta, 06000 Nice. SIRET 824 987 614 00024, TVA intracommunautaire FR94824987614. Toute relation avec le cabinet est régie par la loi n° 71-1130 du 31 décembre 1971 et par le Règlement Intérieur National de la profession d'avocat. Médiateur de la consommation de la profession d'avocat : Maître Jérôme Hercé, 180 boulevard Haussmann, 75008 Paris, mediateur-consommation-avocat.fr. Le présent site a une vocation d'information générale et ne constitue pas une consultation juridique.</p>
+      <p style="margin-bottom:10px;font-size:12px"><a href="/avocat">L'avocat</a> · <a href="/droit-des-societes">Droit des sociétés</a> · <a href="/droit-des-affaires">Droit des affaires</a> · <a href="/droit-des-contrats">Droit des contrats</a> · <a href="/libertes-fondamentales">Libertés fondamentales</a> · <a href="/droit-de-l-art">Droit de l'art</a> · <a href="/honoraires">Honoraires</a> · <a href="/publications">Publications</a></p>
+      <p class="mentions">Maître Michele Esposito, avocat au Barreau de Nice · 35 boulevard Gambetta, 06000 Nice · SIRET 824 987 614 00024 · TVA FR94824987614 · Exercice régi par la loi n° 71-1130 du 31 décembre 1971 et le RIN · Médiateur de la consommation : Jérôme Hercé, 180 bd Haussmann, 75008 Paris (mediateur-consommation-avocat.fr) · Site d'information générale, ne constitue pas une consultation juridique.</p>
     </div>
   </div>
 </footer>
