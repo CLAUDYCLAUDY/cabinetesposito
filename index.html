@@ -343,6 +343,17 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
 .approfondir:hover{color:var(--vert)}
 .meta-article{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--marine);margin-bottom:18px;display:block}
 
+
+/* derniers dossiers */
+.dossiers{display:grid;grid-template-columns:1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin-top:44px}
+@media(min-width:900px){.dossiers{grid-template-columns:1fr 1fr;margin-left:72px}}
+.dossier{background:var(--papier);padding:28px 24px}
+.dossier .num{font-family:'Marcellus',serif;font-size:21px;color:var(--vert);display:block;margin-bottom:8px}
+.dossier .dom{font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--vert-nuit);display:block;margin-bottom:10px}
+.dossier p{font-size:16.5px;color:var(--gris);margin:0;text-align:left;hyphens:none}
+.dossiers-note{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--gris);margin-top:16px;letter-spacing:.02em}
+@media(min-width:900px){.dossiers-note{margin-left:72px}}
+
 /* apparition douce */
 .revele{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .revele.visible{opacity:1;transform:none}
@@ -474,6 +485,69 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
         <p>Quelle que soit l'équipe mobilisée sur un dossier, sa stratégie est arrêtée par Maître Esposito, qui en répond devant le client et rend compte à échéances régulières, sans que celui-ci ait à solliciter l'information.</p>
       </div>
     </div>
+  </section>
+
+
+  <!-- ===================== DERNIERS DOSSIERS ===================== -->
+  <section id="dossiers">
+    <div class="contenu revele">
+      <span class="sur-titre">Interventions récentes</span>
+      <h2>Derniers dossiers traités</h2>
+      <p>Un aperçu, nécessairement anonymisé, des dossiers récemment conduits par le cabinet ; ils disent mieux qu'un long discours la nature et le niveau de nos interventions.</p>
+    </div>
+    <div class="dossiers revele">
+      <div class="dossier">
+        <span class="num">01</span>
+        <span class="dom">Pénal des affaires</span>
+        <p>Défense de la gouvernance d'un fonds d'investissement dans une procédure visant des faits qualifiés d'abus de biens sociaux ; coordination avec les conseils des entités étrangères du groupe.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">02</span>
+        <span class="dom">Droit de l'art</span>
+        <p>Sécurisation de l'importation d'une œuvre majeure à destination du territoire monégasque : instruction du dossier auprès du ministère de la Culture, documentation de provenance, acheminement et remise sécurisés.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">03</span>
+        <span class="dom">Patrimoine privé</span>
+        <p>Création d'une fondation pour une famille européenne de premier plan : structuration et gouvernance, constitution de la dotation, articulation avec une transmission patrimoniale à dimension internationale.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">04</span>
+        <span class="dom">Contentieux commercial</span>
+        <p>Accompagnement contractuel et fiscal d'un groupe de restauration établi à Monaco : contrats d'exploitation et baux, relations fournisseurs et prestataires, structuration des flux, en coordination avec les conseils fiscaux du groupe.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">05</span>
+        <span class="dom">Droit des sociétés</span>
+        <p>Refonte du pacte d'associés d'une holding luxembourgeoise détenant des actifs d'exploitation en France : protection du minoritaire, mécanismes de sortie, exécution forcée organisée.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">06</span>
+        <span class="dom">Successions internationales</span>
+        <p>Règlement d'une succession franco-italienne : actifs bancaires et immobiliers répartis entre les deux États, coordination des notaires, des banques et des administrations des deux côtés de la frontière.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">07</span>
+        <span class="dom">Fusions & acquisitions</span>
+        <p>Cession d'une société familiale à un acquéreur industriel européen : négociation du protocole et de la garantie d'actif et de passif, mécanisme de complément de prix, accompagnement des fondateurs jusqu'au closing.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">08</span>
+        <span class="dom">Contrats internationaux</span>
+        <p>Négociation d'un contrat-cadre de distribution entre un industriel français et un groupe italien : droit applicable et for arbitral, garanties bancaires à première demande, engagement pluriannuel significatif.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">09</span>
+        <span class="dom">Recouvrement transfrontalier</span>
+        <p>Recouvrement d'une créance de plusieurs millions d'euros : mesures conservatoires en France, exequatur du jugement dans la Principauté de Monaco, négociation d'un protocole de règlement définitif.</p>
+      </div>
+      <div class="dossier">
+        <span class="num">10</span>
+        <span class="dom">Immobilier d'exception</span>
+        <p>Acquisition d'une propriété de premier plan sur la Côte d'Azur par un investisseur international : audit juridique, structuration de la détention, négociation et sécurisation complète de l'opération.</p>
+      </div>
+    </div>
+    <p class="dossiers-note">Références volontairement anonymisées : le secret professionnel commande la discrétion sur l'identité de nos clients.</p>
   </section>
 
   <!-- ===================== FAQ ===================== -->
