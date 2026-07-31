@@ -116,8 +116,8 @@ header{
   border-bottom:1px solid var(--hairline);
 }
 nav{display:flex;align-items:baseline;justify-content:space-between;padding:20px 0}
-.marque{font-family:'Marcellus',serif;font-size:19px;letter-spacing:.14em;border:none;color:var(--encre)}
-.marque span{color:var(--vert)}
+.marque{font-family:'Marcellus',serif;font-size:19px;font-weight:700;-webkit-text-stroke:.6px currentColor;letter-spacing:.16em;border:none;color:var(--encre)}
+.marque span{color:var(--vert);font-size:1.35em;font-weight:700;-webkit-text-stroke:1px var(--vert);line-height:0}
 .liens{display:flex;gap:30px}
 .liens a{
   font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.14em;
@@ -251,6 +251,10 @@ footer .cab{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.12em;co
 
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--vert-nuit);color:var(--papier);padding:10px 18px;z-index:99;font-family:'Inter',sans-serif;font-size:13px}
 .skip-link:focus{left:0}
+
+.contenu p,.prose p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.hero .these{text-align:left;hyphens:none}
+.place span,.article-apercu p,.liens a{text-align:left;hyphens:none}
 </style>
 </head>
 <body>
@@ -298,15 +302,15 @@ footer .cab{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.12em;co
       <h2>Provision, frais et transparence en cours de dossier</h2>
       <p>Une provision est demandée à l'ouverture du dossier, puis régularisée au fil des diligences. Les frais externes, huissiers, experts, traducteurs, droits de plaidoirie, correspondants étrangers, sont refacturés à l'euro près, sur justificatifs. Dans les contentieux, chaque étape significative donne lieu à un point d'avancement écrit incluant l'état des honoraires, de sorte que le client dispose, à tout moment, d'une vision exacte du coût engagé et du coût prévisible.</p>
 
-      <h2>Protection juridique et aide au financement</h2>
-      <p>De nombreux contrats d'assurance comportent une garantie protection juridique susceptible de prendre en charge tout ou partie des honoraires. Le cabinet examine cette possibilité à l'ouverture du dossier et assiste le client dans ses démarches auprès de l'assureur, le libre choix de l'avocat étant garanti par la loi.</p>
+      <h2>Pro bono</h2>
+      <p>Le cabinet consacre chaque année une part de son activité à des dossiers traités gracieusement, lorsqu'une cause le justifie et que les moyens de la personne ne lui permettent pas d'accéder à une défense de ce niveau. Cette prise en charge relève du seul choix du cabinet, apprécié au cas par cas ; elle ne constitue ni un droit ni un service sur demande, mais elle appartient à notre conception du métier : les dossiers pro bono reçoivent la même exigence de fond et de forme que tous les autres.</p>
 
       <h2>En cas de désaccord</h2>
       <p>Les contestations d'honoraires relèvent de la procédure spéciale devant le bâtonnier de l'Ordre, dont la décision est susceptible de recours devant le premier président de la cour d'appel. Les clients consommateurs peuvent en outre saisir gratuitement le médiateur de la consommation de la profession d'avocat, Maître Jérôme Hercé, 180 boulevard Haussmann, 75008 Paris (mediateur-consommation-avocat.fr). La meilleure garantie reste toutefois celle que nous pratiquons : tout écrire, tout expliquer, avant.</p>
 
       <div class="cta-fin">
         <h2>Saisir le cabinet</h2>
-        <p>Pour soumettre une situation relevant de cette matière, écrivez-nous à <a href="mailto:cabinet@micheleesposito.me">cabinet@micheleesposito.me</a> en exposant brièvement les faits et les pièces dont vous disposez. Une réponse est apportée sous quarante-huit heures ouvrées. Consultations au cabinet, 35 boulevard Gambetta à Nice, et en visioconférence, en français, en italien et en anglais.</p>
+        <p>Pour soumettre une situation relevant de cette matière, écrivez-nous à <a href="mailto:cabinet@micheleesposito.me">cabinet@micheleesposito.me</a> en exposant brièvement les faits et les pièces dont vous disposez. Une réponse est apportée sous quarante-huit heures ouvrées ; en cas d'urgence, le cabinet est joignable au <a href="tel:+33659233368">+33 6 59 23 33 68</a>. Consultations au cabinet, 35 boulevard Gambetta à Nice, et en visioconférence, en français, en italien et en anglais.</p>
         <a class="bouton" href="mailto:cabinet@micheleesposito.me?subject=Demande%20de%20consultation">Demander une consultation</a>
       </div>
     </div>

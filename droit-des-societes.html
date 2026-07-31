@@ -116,8 +116,8 @@ header{
   border-bottom:1px solid var(--hairline);
 }
 nav{display:flex;align-items:baseline;justify-content:space-between;padding:20px 0}
-.marque{font-family:'Marcellus',serif;font-size:19px;letter-spacing:.14em;border:none;color:var(--encre)}
-.marque span{color:var(--vert)}
+.marque{font-family:'Marcellus',serif;font-size:19px;font-weight:700;-webkit-text-stroke:.6px currentColor;letter-spacing:.16em;border:none;color:var(--encre)}
+.marque span{color:var(--vert);font-size:1.35em;font-weight:700;-webkit-text-stroke:1px var(--vert);line-height:0}
 .liens{display:flex;gap:30px}
 .liens a{
   font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.14em;
@@ -251,6 +251,10 @@ footer .cab{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.12em;co
 
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--vert-nuit);color:var(--papier);padding:10px 18px;z-index:99;font-family:'Inter',sans-serif;font-size:13px}
 .skip-link:focus{left:0}
+
+.contenu p,.prose p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.hero .these{text-align:left;hyphens:none}
+.place span,.article-apercu p,.liens a{text-align:left;hyphens:none}
 </style>
 <script type="application/ld+json">
 {
@@ -378,7 +382,7 @@ footer .cab{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.12em;co
       <p>Tout dépend de la forme sociale et des statuts. En société par actions simplifiée, les conditions de la révocation, motifs, organe compétent, indemnisation, résultent pour l'essentiel de la rédaction statutaire ; une révocation dans des conditions vexatoires ou contraires aux statuts ouvre droit à des dommages et intérêts. L'audit des statuts et du pacte est le préalable indispensable à toute décision.</p>
       <div class="cta-fin">
         <h2>Saisir le cabinet</h2>
-        <p>Pour soumettre une situation relevant de cette matière, écrivez-nous à <a href="mailto:cabinet@micheleesposito.me">cabinet@micheleesposito.me</a> en exposant brièvement les faits et les pièces dont vous disposez. Une réponse est apportée sous quarante-huit heures ouvrées. Consultations au cabinet, 35 boulevard Gambetta à Nice, et en visioconférence, en français, en italien et en anglais.</p>
+        <p>Pour soumettre une situation relevant de cette matière, écrivez-nous à <a href="mailto:cabinet@micheleesposito.me">cabinet@micheleesposito.me</a> en exposant brièvement les faits et les pièces dont vous disposez. Une réponse est apportée sous quarante-huit heures ouvrées ; en cas d'urgence, le cabinet est joignable au <a href="tel:+33659233368">+33 6 59 23 33 68</a>. Consultations au cabinet, 35 boulevard Gambetta à Nice, et en visioconférence, en français, en italien et en anglais.</p>
         <a class="bouton" href="mailto:cabinet@micheleesposito.me?subject=Demande%20de%20consultation">Demander une consultation</a>
       </div>
     </div>
