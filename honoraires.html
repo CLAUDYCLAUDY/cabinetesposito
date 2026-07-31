@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://www.micheleesposito.fr/honoraires">
 <meta property="og:image" content="https://www.micheleesposito.fr/og-cabinet-esposito.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#1F5F2D">
+<meta name="theme-color" content="#12381E">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script type="application/ld+json">
@@ -47,16 +47,16 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --papier:#FAF9F5;
-  --encre:#14211B;
-  --vert:#1F5F2D;
-  --vert-nuit:#163823;
-  --marine:#182A44;
-  --gris:#5A635D;
-  --hairline:rgba(20,33,27,.16);
+  --papier:#FFFFFF;
+  --encre:#000000;
+  --vert:#12381E;
+  --vert-nuit:#0C2614;
+  --marine:#0C2614;
+  --gris:#3F3F3F;
+  --hairline:rgba(0,0,0,.14);
   --mesure:66ch;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,13 +69,15 @@ body{
   line-height:1.72;
   -webkit-font-smoothing:antialiased;
 }
-::selection{background:var(--vert);color:var(--papier)}
+::selection{background:var(--vert);color:#fff}
 a{color:var(--vert-nuit);text-decoration:none;border-bottom:1px solid rgba(31,95,45,.35);transition:border-color .2s,color .2s}
 a:hover{color:var(--vert);border-color:var(--vert)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--vert);outline-offset:3px;border-radius:1px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--vert-nuit);color:#fff;padding:10px 18px;z-index:99;font-family:'Inter',sans-serif;font-size:13px}
+.skip-link:focus{left:0}
 
 /* ---------- structure : l'axe ---------- */
-.gabarit{max-width:1240px;margin:0 auto;padding:0 24px;position:relative}
+.gabarit{max-width:1060px;margin:0 auto;padding:0 24px;position:relative}
 @media(min-width:900px){
   .gabarit{padding:0 48px}
   .axe{position:absolute;top:0;bottom:0;left:48px;width:1px;background:var(--hairline)}
@@ -108,17 +110,21 @@ p{margin-bottom:1.35em}
 p:last-child{margin-bottom:0}
 .sobre{color:var(--gris)}
 em{font-style:italic}
+.contenu p,.prose p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.hero .these{text-align:left;hyphens:none}
+.place span,.article-apercu p{text-align:left;hyphens:none}
 
 /* ---------- navigation ---------- */
 header{
   position:sticky;top:0;z-index:10;
-  background:rgba(250,249,245,.92);
+  background:rgba(255,255,255,.92);
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--hairline);
 }
-nav{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 0}
-.marque{font-family:'Marcellus',serif;font-size:19px;font-weight:700;-webkit-text-stroke:.6px currentColor;letter-spacing:.16em;border:none;color:var(--encre)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:14px 0}
+.marque{font-family:'Marcellus',serif;font-size:19px;font-weight:700;-webkit-text-stroke:.6px currentColor;letter-spacing:.16em;border:none;color:var(--encre);display:inline-flex;align-items:center;gap:11px}
 .marque span{color:var(--vert);font-size:1.35em;font-weight:700;-webkit-text-stroke:1px var(--vert);line-height:0}
+.marque-e{height:30px;width:auto;display:block}
 .liens{display:flex;gap:26px;flex-wrap:nowrap}
 .liens a{
   font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.14em;
@@ -128,21 +134,21 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:28px;paddi
 @media(max-width:1020px){.liens{display:none}}
 
 /* ---------- héro ---------- */
-.hero{padding:92px 0 0;text-align:center}
-.hero-int{max-width:820px;margin:0 auto;padding:0 8px}
-.hero-sur{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;
-  letter-spacing:.32em;text-transform:uppercase;color:var(--vert);
-  display:block;margin-bottom:34px;
+.hero{padding:96px 0 78px}
+.hero h1{
+  font-size:clamp(34px,5.2vw,58px);
+  letter-spacing:.015em;
+  line-height:1.16;
+  max-width:20ch;
+  margin-bottom:26px;
 }
-.hero-titre{
-  font-family:'Marcellus',serif;font-weight:400;
-  font-size:clamp(34px,5.4vw,60px);line-height:1.16;letter-spacing:.015em;
-  color:var(--encre);margin:0 auto 26px;
-}
-.hero-sous{
-  font-size:clamp(17.5px,2vw,21px);font-weight:300;line-height:1.7;
-  color:var(--gris);max-width:56ch;margin:0 auto;
+.hero .these{
+  font-size:clamp(18px,2.2vw,23px);
+  font-weight:300;
+  line-height:1.65;
+  max-width:52ch;
+  margin-bottom:58px;
+  color:var(--gris);
 }
 .linteau{
   text-align:center;
@@ -154,9 +160,10 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:28px;paddi
   border-bottom:1px solid var(--hairline);
   padding:16px 0;
   text-transform:uppercase;
-  white-space:nowrap;
-  overflow-x:auto;
+  white-space:normal;
+  line-height:2.1;
 }
+@media(max-width:700px){.linteau{font-size:12px;letter-spacing:.2em;line-height:2;padding:14px 0}}
 .linteau b{color:var(--marine);font-weight:400;padding:0 .5em}
 
 /* ---------- sections ---------- */
@@ -208,25 +215,18 @@ details p{margin-top:14px;color:var(--gris)}
 .bouton{
   display:inline-block;margin-top:10px;
   font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--papier);background:var(--vert-nuit);
+  color:#fff;background:var(--vert-nuit);
   padding:16px 34px;border:none;transition:background .2s;
 }
-.bouton:hover{background:var(--vert);color:var(--papier)}
+.bouton:hover{background:var(--vert);color:#fff}
 
 /* footer */
 footer{border-top:1px solid var(--hairline);padding:34px 0 42px;font-size:12px;color:var(--gris)}
 footer .mentions{max-width:90ch;line-height:1.7;font-size:11.5px}
 footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;color:var(--vert);margin-bottom:8px}
+.pied-e{height:26px;width:auto;display:block;margin-bottom:12px}
 
-/* apparition douce */
-.revele{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
-.revele.visible{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .revele{opacity:1;transform:none;transition:none}
-}
-
-/* ---------- pages intérieures ---------- */
+/* pages intérieures */
 .breadcrumb{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);padding:34px 0 0}
 .breadcrumb a{border:none;color:var(--gris)}
 .breadcrumb a:hover{color:var(--vert)}
@@ -245,34 +245,13 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
 .approfondir:hover{color:var(--vert)}
 .meta-article{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--marine);margin-bottom:18px;display:block}
 
-
-.skip-link{position:absolute;left:-9999px;top:0;background:var(--vert-nuit);color:var(--papier);padding:10px 18px;z-index:99;font-family:'Inter',sans-serif;font-size:13px}
-.skip-link:focus{left:0}
-
-.contenu p,.prose p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
-.place span,.article-apercu p,.liens a{text-align:left;hyphens:none}
-
-/* ---------- grand écran v3 : composition pleine largeur, sans axe ---------- */
-@media(min-width:900px){
-  .axe{display:none}
-  .contenu{margin-left:0}
-  .sur-titre::before{display:none}
-  .deux-colonnes{margin-left:0}
+/* apparition douce */
+.revele{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.revele.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .revele{opacity:1;transform:none;transition:none}
 }
-@media(min-width:1120px){
-  .contenu:has(> .sur-titre){display:grid;grid-template-columns:190px minmax(0,72ch);column-gap:64px;align-items:start;max-width:none}
-  .contenu:has(> .sur-titre) > *{grid-column:2}
-  .contenu:has(> .sur-titre) > .sur-titre{grid-column:1;grid-row:1;position:sticky;top:110px;margin-bottom:0;line-height:1.7;border-top:1px solid var(--marine);padding-top:14px}
-  .contenu.prose:not(:has(> .sur-titre)){margin-left:254px;max-width:72ch}
-  .hero{padding:130px 0 0}
-  .linteau{margin-top:96px;padding:20px 0}
-  section{padding:104px 0}
-  .places{grid-template-columns:repeat(3,1fr)}
-}
-
-.marque{display:inline-flex;align-items:center;gap:11px}
-.marque-e{height:30px;width:auto;display:block}
-.pied-e{height:26px;width:auto;display:block;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -321,7 +300,7 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
       <p>Une provision est demandée à l'ouverture du dossier, puis régularisée au fil des diligences. Les frais externes, huissiers, experts, traducteurs, droits de plaidoirie, correspondants étrangers, sont refacturés à l'euro près, sur justificatifs. Dans les contentieux, chaque étape significative donne lieu à un point d'avancement écrit incluant l'état des honoraires, de sorte que le client dispose, à tout moment, d'une vision exacte du coût engagé et du coût prévisible.</p>
 
       <h2>Pro bono</h2>
-      <p>Le cabinet consacre chaque année une part de son activité à des dossiers traités gracieusement, lorsqu'une cause le justifie et que les moyens de la personne ne lui permettent pas d'accéder à une défense de ce niveau. Cette prise en charge relève du seul choix du cabinet, apprécié au cas par cas ; elle ne constitue ni un droit ni un service sur demande, mais elle appartient à notre conception du métier : les dossiers pro bono reçoivent la même exigence de fond et de forme que tous les autres.</p>
+      <p>Le cabinet consacre chaque année une part de son activité à des dossiers traités gracieusement, lorsqu'une cause le justifie et que les moyens de la personne ne lui permettent pas d'accéder à un avocat. Cette prise en charge relève du seul choix du cabinet, apprécié au cas par cas ; elle n'est ni un droit ni un service sur demande, mais elle appartient à notre conception du métier : ces dossiers reçoivent la même attention que tous les autres.</p>
 
       <h2>En cas de désaccord</h2>
       <p>Les contestations d'honoraires relèvent de la procédure spéciale devant le bâtonnier de l'Ordre, dont la décision est susceptible de recours devant le premier président de la cour d'appel. Les clients consommateurs peuvent en outre saisir gratuitement le médiateur de la consommation de la profession d'avocat, Maître Jérôme Hercé, 180 boulevard Haussmann, 75008 Paris (mediateur-consommation-avocat.fr). La meilleure garantie reste toutefois celle que nous pratiquons : tout écrire, tout expliquer, avant.</p>
@@ -340,7 +319,7 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
     <div class="contenu">
       <img src="/logo-e.png" alt="" class="pied-e" width="45" height="45">
       <p class="cab">CABINET ESPOSITO</p>
-      <p style="margin-bottom:10px;font-size:12px"><a href="/avocat">L'avocat</a> · <a href="/droit-des-societes">Droit des sociétés</a> · <a href="/droit-des-affaires">Droit des affaires</a> · <a href="/droit-des-contrats">Droit des contrats</a> · <a href="/libertes-fondamentales">Libertés fondamentales</a> · <a href="/droit-de-l-art">Droit de l'art</a> · <a href="/honoraires">Honoraires</a> · <a href="/publications">Publications</a></p>
+      <p style="margin-bottom:10px;font-size:12px"><a href="/droit-des-societes">Droit des sociétés</a> · <a href="/droit-des-affaires">Droit des affaires</a> · <a href="/droit-des-contrats">Droit des contrats</a> · <a href="/libertes-fondamentales">Libertés fondamentales</a> · <a href="/droit-de-l-art">Droit de l'art</a> · <a href="/honoraires">Honoraires</a> · <a href="/publications">Publications</a></p>
       <p class="mentions">Maître Michele Esposito, avocat au Barreau de Nice · 35 boulevard Gambetta, 06000 Nice · SIRET 824 987 614 00024 · TVA FR94824987614 · Exercice régi par la loi n° 71-1130 du 31 décembre 1971 et le RIN · Médiateur de la consommation : Jérôme Hercé, 180 bd Haussmann, 75008 Paris (mediateur-consommation-avocat.fr) · Site d'information générale, ne constitue pas une consultation juridique.</p>
     </div>
   </div>
