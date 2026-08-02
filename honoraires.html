@@ -122,16 +122,15 @@ header{
   border-bottom:1px solid var(--hairline);
 }
 nav{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:14px 0}
-.marque{font-family:'Marcellus',serif;font-size:19px;font-weight:700;-webkit-text-stroke:.6px currentColor;letter-spacing:.16em;border:none;color:var(--encre);display:inline-flex;align-items:center;gap:11px}
+.marque{font-family:'Marcellus',serif;font-size:19px;font-weight:700;-webkit-text-stroke:.6px currentColor;letter-spacing:.16em;border:none;color:var(--encre)}
+.menu-e{background:none;border:none;cursor:pointer;padding:4px;line-height:0}
+.menu-e img{height:46px;width:auto;display:block;transition:transform .25s ease}
+.menu-e[aria-expanded="true"] img{transform:rotate(-12deg) scale(1.08)}
+.panneau{display:flex;flex-wrap:wrap;gap:12px 26px;padding:12px 0 16px;border-top:1px solid var(--hairline)}
+.panneau[hidden]{display:none}
+.panneau a{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:none;color:var(--gris);white-space:nowrap}
+.panneau a:hover{color:var(--vert)}
 .marque span{color:var(--vert);font-size:1.35em;font-weight:700;-webkit-text-stroke:1px var(--vert);line-height:0}
-.marque-e{height:30px;width:auto;display:block}
-.liens{display:flex;gap:26px;flex-wrap:nowrap}
-.liens a{
-  font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.14em;
-  text-transform:uppercase;border:none;color:var(--gris);white-space:nowrap;
-}
-.liens a:hover{color:var(--vert)}
-@media(max-width:1020px){.liens{display:none}}
 
 /* ---------- héro ---------- */
 .hero{padding:96px 0 78px}
@@ -224,7 +223,7 @@ details p{margin-top:14px;color:var(--gris)}
 footer{border-top:1px solid var(--hairline);padding:34px 0 42px;font-size:12px;color:var(--gris)}
 footer .mentions{max-width:90ch;line-height:1.7;font-size:11.5px}
 footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;color:var(--vert);margin-bottom:8px}
-.pied-e{height:26px;width:auto;display:block;margin-bottom:12px}
+.pied-e{height:32px;width:auto;display:block;margin-bottom:12px}
 
 /* pages intérieures */
 .breadcrumb{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);padding:34px 0 0}
@@ -259,15 +258,17 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
 <header>
   <div class="gabarit">
     <nav aria-label="Navigation principale">
-      <a class="marque" href="/"><img src="/logo-e.png" alt="" class="marque-e" width="45" height="45">ESPOSITO<span>.</span></a>
-      <div class="liens">
-        <a href="/#cabinet">Le cabinet</a>
-        <a href="/#expertises">Domaines</a>
-        <a href="/#international">International</a>
-        <a href="/publications">Publications</a>
-        <a href="/honoraires">Honoraires</a>
-        <a href="/#contact">Contact</a>
-      </div>
+      <a class="marque" href="/">ESPOSITO<span>.</span></a>
+      <button class="menu-e" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="panneau"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDQ0IDEwNDQiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLDEwNDQuMDAwMDAwKSBzY2FsZSgwLjEwMDAwMCwtMC4xMDAwMDApIiBmaWxsPSIjMTIzODFFIj48cGF0aCBkPSJNNjA4NSA3ODk2IGMtODEgLTE2IC0yNzEgLTcxIC0zMzAgLTk2IC01MyAtMjMgLTE0MCAtODggLTMxNSAtMjM2Ci0xNTYgLTEzMSAtMjUzIC0yMzQgLTM2NCAtMzg0IC0zOCAtNTIgLTEwNCAtMTM4IC0xNDYgLTE5MCAtMTU5IC0xOTggLTMxNgotNDI2IC0zNjQgLTUzMCAtNDUgLTk5IC05NyAtMjIzIC0xMzEgLTMxNSAtMTggLTQ5IC01MCAtMTI4IC03MCAtMTc0IC0yMCAtNDYKLTQ4IC0xMzYgLTYyIC0yMDAgLTE0IC02NCAtMzcgLTE3NCAtNTIgLTI0NiAtMzQgLTE1OSAtNDkgLTE5MSAtMTA0IC0yMTYgLTUxCi0yMyAtNzYgLTIzIC0xNTIgLTQgLTE1NSA0MSAtMjc0IDExNSAtNDM2IDI3MiAtMjAzIDE5NyAtMzUyIDQxOCAtNDE0IDYxMwotMjUgNzkgLTQxIDEwNyAtOTQgMTYzIC0xMDQgMTEyIC0xODcgMTM1IC0yODcgNzcgLTI5IC0xNiAtNjggLTQ4IC04NyAtNzEKLTU5IC02OCAtNjkgLTExMSAtNzQgLTMxMCAtMTAgLTM3MiA0MyAtNTYxIDI0MCAtODQ5IDYwIC04NyA5NyAtMTI3IDIxOSAtMjM1CjE1MSAtMTM1IDE1NCAtMTM2IDUxNyAtMzQwIDY2IC0zNyAxNDEgLTcwIDIxMCAtOTAgNDA4IC0xMjMgMzg5IC0xMTYgNDMzCi0xNjIgMzQgLTM1IDUwIC04MiA3OCAtMjE5IDE2IC03OCAzOCAtMTQzIDc2IC0yMjkgOTEgLTE5OSAyMDUgLTQxNyAyNDkgLTQ3NQoxNDcgLTE5MCAzMzIgLTM3MCA1MTAgLTQ5NSA4MSAtNTYgMzEyIC0xNzYgNDI3IC0yMjEgNTEgLTIwIDEzMSAtNTEgMTc4IC02OQoxMDYgLTQxIDM5NSAtOTkgNTk4IC0xMTkgMjA5IC0yMiA2NTcgLTIyIDgyNCAwIDE1NyAyMCA0MTYgODUgNDcyIDExOCA2NCAzNwoxNTQgMTIzIDE3OSAxNzAgMTkgMzUgMjIgNTcgMjIgMTQ2IDAgOTQgLTMgMTExIC0yNyAxNjMgLTM1IDc0IC0xMzIgMTcxIC0yMDQKMjA0IC03MSAzMiAtMTYwIDQwIC01NDkgNDcgLTE3NiA0IC0zNzggMTEgLTQ1MCAxNyAtMjg1IDIyIC02NTQgNjAgLTcyMCA3NAotMTY4IDM1IC00MDkgMTk3IC01OTEgMzk3IC04NCA5MyAtMTI3IDE1OCAtMTgyIDI4MiAtODUgMTg4IC02MyAyNDUgMTIyIDMxMAo1NSAyMCAxNTUgNDkgMjIwIDY2IDY2IDE3IDE1OCA0OCAyMDUgNjkgNDcgMjIgMTE1IDUxIDE1MSA2NCAzNiAxNCA5MCAzNyAxMjAKNTIgMzAgMTYgOTggNDcgMTUwIDcwIDE5MyA4NCA0NTcgMjUzIDYxNSAzOTUgNTAgNDQgMTMzIDExOSAxODYgMTY2IDEwMCA4OAoyNzAgMjc5IDM1NiAzOTkgMjggMzkgODUgMTM4IDEyNyAyMjAgNzAgMTM3IDgwIDE2NCAxMTIgMzA1IDMyIDEzOSAzNSAxNzAgMzUKMjk3IDAgNzggLTUgMTY4IC0xMSAyMDAgLTIyIDEyNCAtNzIgMjkwIC0xMTQgMzgzIC0yNSA1MyAtNTMgMTE3IC02MiAxNDEgLTQ5CjEyNyAtMjAwIDMwNiAtMzU3IDQyNSAtNzIgNTQgLTExNSA3NSAtMjg3IDEzNSBsLTEyNSA0NCAtMjAwIDIgYy0xMzQgMSAtMjIzCi0yIC0yNzAgLTExeiBtNDA0IC04OTggYzYxIC0yOSAxNTEgLTEyMCAxODcgLTE4OSAyOCAtNTMgMjkgLTU4IDI5IC0yMDkgMAotMTgzIC0xNSAtMjQ1IC05MSAtMzc1IC0xMzUgLTIzMCAtMzU5IC00NDIgLTYyNSAtNTg4IC0xNzAgLTk0IC00MTggLTIxNAotNDY5IC0yMjcgLTI1IC03IC0xMDggLTMyIC0xODUgLTU3IC0xNTMgLTQ5IC0yMDEgLTUyIC0yMzkgLTEzIC0zNCAzNCAtMjUKMTE1IDM5IDM1NSA1NSAyMDkgNjAgMjIzIDIwMSA1MjAgMTIwIDI1NCAyOTggNDY3IDUxOCA2MjAgMTEyIDc3IDE0NSA5NCAyNjcKMTM0IDE5OSA2NiAyNzkgNzIgMzY4IDI5eiIvPjwvZz48L3N2Zz4=" alt="" width="45" height="45"></button>
+    </nav>
+    <nav class="panneau" id="panneau" hidden aria-label="Menu">
+      <a href="/#cabinet">Le cabinet</a>
+      <a href="/#expertises">Domaines</a>
+      <a href="/#dossiers">Dossiers</a>
+      <a href="/#international">International</a>
+      <a href="/publications">Publications</a>
+      <a href="/honoraires">Honoraires</a>
+      <a href="/#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -317,12 +318,19 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
 <footer>
   <div class="gabarit">
     <div class="contenu">
-      <img src="/logo-e.png" alt="" class="pied-e" width="45" height="45">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDQ0IDEwNDQiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLDEwNDQuMDAwMDAwKSBzY2FsZSgwLjEwMDAwMCwtMC4xMDAwMDApIiBmaWxsPSIjMTIzODFFIj48cGF0aCBkPSJNNjA4NSA3ODk2IGMtODEgLTE2IC0yNzEgLTcxIC0zMzAgLTk2IC01MyAtMjMgLTE0MCAtODggLTMxNSAtMjM2Ci0xNTYgLTEzMSAtMjUzIC0yMzQgLTM2NCAtMzg0IC0zOCAtNTIgLTEwNCAtMTM4IC0xNDYgLTE5MCAtMTU5IC0xOTggLTMxNgotNDI2IC0zNjQgLTUzMCAtNDUgLTk5IC05NyAtMjIzIC0xMzEgLTMxNSAtMTggLTQ5IC01MCAtMTI4IC03MCAtMTc0IC0yMCAtNDYKLTQ4IC0xMzYgLTYyIC0yMDAgLTE0IC02NCAtMzcgLTE3NCAtNTIgLTI0NiAtMzQgLTE1OSAtNDkgLTE5MSAtMTA0IC0yMTYgLTUxCi0yMyAtNzYgLTIzIC0xNTIgLTQgLTE1NSA0MSAtMjc0IDExNSAtNDM2IDI3MiAtMjAzIDE5NyAtMzUyIDQxOCAtNDE0IDYxMwotMjUgNzkgLTQxIDEwNyAtOTQgMTYzIC0xMDQgMTEyIC0xODcgMTM1IC0yODcgNzcgLTI5IC0xNiAtNjggLTQ4IC04NyAtNzEKLTU5IC02OCAtNjkgLTExMSAtNzQgLTMxMCAtMTAgLTM3MiA0MyAtNTYxIDI0MCAtODQ5IDYwIC04NyA5NyAtMTI3IDIxOSAtMjM1CjE1MSAtMTM1IDE1NCAtMTM2IDUxNyAtMzQwIDY2IC0zNyAxNDEgLTcwIDIxMCAtOTAgNDA4IC0xMjMgMzg5IC0xMTYgNDMzCi0xNjIgMzQgLTM1IDUwIC04MiA3OCAtMjE5IDE2IC03OCAzOCAtMTQzIDc2IC0yMjkgOTEgLTE5OSAyMDUgLTQxNyAyNDkgLTQ3NQoxNDcgLTE5MCAzMzIgLTM3MCA1MTAgLTQ5NSA4MSAtNTYgMzEyIC0xNzYgNDI3IC0yMjEgNTEgLTIwIDEzMSAtNTEgMTc4IC02OQoxMDYgLTQxIDM5NSAtOTkgNTk4IC0xMTkgMjA5IC0yMiA2NTcgLTIyIDgyNCAwIDE1NyAyMCA0MTYgODUgNDcyIDExOCA2NCAzNwoxNTQgMTIzIDE3OSAxNzAgMTkgMzUgMjIgNTcgMjIgMTQ2IDAgOTQgLTMgMTExIC0yNyAxNjMgLTM1IDc0IC0xMzIgMTcxIC0yMDQKMjA0IC03MSAzMiAtMTYwIDQwIC01NDkgNDcgLTE3NiA0IC0zNzggMTEgLTQ1MCAxNyAtMjg1IDIyIC02NTQgNjAgLTcyMCA3NAotMTY4IDM1IC00MDkgMTk3IC01OTEgMzk3IC04NCA5MyAtMTI3IDE1OCAtMTgyIDI4MiAtODUgMTg4IC02MyAyNDUgMTIyIDMxMAo1NSAyMCAxNTUgNDkgMjIwIDY2IDY2IDE3IDE1OCA0OCAyMDUgNjkgNDcgMjIgMTE1IDUxIDE1MSA2NCAzNiAxNCA5MCAzNyAxMjAKNTIgMzAgMTYgOTggNDcgMTUwIDcwIDE5MyA4NCA0NTcgMjUzIDYxNSAzOTUgNTAgNDQgMTMzIDExOSAxODYgMTY2IDEwMCA4OAoyNzAgMjc5IDM1NiAzOTkgMjggMzkgODUgMTM4IDEyNyAyMjAgNzAgMTM3IDgwIDE2NCAxMTIgMzA1IDMyIDEzOSAzNSAxNzAgMzUKMjk3IDAgNzggLTUgMTY4IC0xMSAyMDAgLTIyIDEyNCAtNzIgMjkwIC0xMTQgMzgzIC0yNSA1MyAtNTMgMTE3IC02MiAxNDEgLTQ5CjEyNyAtMjAwIDMwNiAtMzU3IDQyNSAtNzIgNTQgLTExNSA3NSAtMjg3IDEzNSBsLTEyNSA0NCAtMjAwIDIgYy0xMzQgMSAtMjIzCi0yIC0yNzAgLTExeiBtNDA0IC04OTggYzYxIC0yOSAxNTEgLTEyMCAxODcgLTE4OSAyOCAtNTMgMjkgLTU4IDI5IC0yMDkgMAotMTgzIC0xNSAtMjQ1IC05MSAtMzc1IC0xMzUgLTIzMCAtMzU5IC00NDIgLTYyNSAtNTg4IC0xNzAgLTk0IC00MTggLTIxNAotNDY5IC0yMjcgLTI1IC03IC0xMDggLTMyIC0xODUgLTU3IC0xNTMgLTQ5IC0yMDEgLTUyIC0yMzkgLTEzIC0zNCAzNCAtMjUKMTE1IDM5IDM1NSA1NSAyMDkgNjAgMjIzIDIwMSA1MjAgMTIwIDI1NCAyOTggNDY3IDUxOCA2MjAgMTEyIDc3IDE0NSA5NCAyNjcKMTM0IDE5OSA2NiAyNzkgNzIgMzY4IDI5eiIvPjwvZz48L3N2Zz4=" alt="" class="pied-e" width="45" height="45">
       <p class="cab">CABINET ESPOSITO</p>
       <p style="margin-bottom:10px;font-size:12px"><a href="/droit-des-societes">Droit des sociétés</a> · <a href="/droit-des-affaires">Droit des affaires</a> · <a href="/droit-des-contrats">Droit des contrats</a> · <a href="/libertes-fondamentales">Libertés fondamentales</a> · <a href="/droit-de-l-art">Droit de l'art</a> · <a href="/honoraires">Honoraires</a> · <a href="/publications">Publications</a></p>
       <p class="mentions">Maître Michele Esposito, avocat au Barreau de Nice · 35 boulevard Gambetta, 06000 Nice · SIRET 824 987 614 00024 · TVA FR94824987614 · Exercice régi par la loi n° 71-1130 du 31 décembre 1971 et le RIN · Médiateur de la consommation : Jérôme Hercé, 180 bd Haussmann, 75008 Paris (mediateur-consommation-avocat.fr) · Site d'information générale, ne constitue pas une consultation juridique.</p>
     </div>
   </div>
 </footer>
+<script>
+(function(){var b=document.querySelector('.menu-e'),p=document.getElementById('panneau');
+if(b&&p){b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';
+b.setAttribute('aria-expanded',o?'false':'true');b.setAttribute('aria-label',o?'Ouvrir le menu':'Fermer le menu');
+if(o){p.setAttribute('hidden','')}else{p.removeAttribute('hidden')}});
+p.addEventListener('click',function(e){if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');p.setAttribute('hidden','')}});}})();
+</script>
 </body>
 </html>
