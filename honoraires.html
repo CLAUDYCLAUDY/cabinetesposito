@@ -121,7 +121,7 @@ header{
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--hairline);
 }
-nav{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:14px 0}
+header nav:not(.panneau){display:flex;align-items:center;justify-content:space-between;gap:28px;padding:14px 0}
 .marque{font-family:'Marcellus',serif;font-size:19px;font-weight:700;-webkit-text-stroke:.6px currentColor;letter-spacing:.16em;border:none;color:var(--encre)}
 .menu-e{background:none;border:none;cursor:pointer;padding:4px;line-height:0}
 .menu-e img{height:46px;width:auto;display:block;transition:transform .25s ease}
@@ -226,7 +226,7 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
 .pied-e{height:32px;width:auto;display:block;margin-bottom:12px}
 
 /* pages intérieures */
-.breadcrumb{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);padding:34px 0 0}
+.breadcrumb{display:block;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);padding:34px 0 0}
 .breadcrumb a{border:none;color:var(--gris)}
 .breadcrumb a:hover{color:var(--vert)}
 .page-hero{padding:44px 0 64px}
@@ -262,6 +262,7 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
       <button class="menu-e" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="panneau"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDQ0IDEwNDQiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLDEwNDQuMDAwMDAwKSBzY2FsZSgwLjEwMDAwMCwtMC4xMDAwMDApIiBmaWxsPSIjMTIzODFFIj48cGF0aCBkPSJNNjA4NSA3ODk2IGMtODEgLTE2IC0yNzEgLTcxIC0zMzAgLTk2IC01MyAtMjMgLTE0MCAtODggLTMxNSAtMjM2Ci0xNTYgLTEzMSAtMjUzIC0yMzQgLTM2NCAtMzg0IC0zOCAtNTIgLTEwNCAtMTM4IC0xNDYgLTE5MCAtMTU5IC0xOTggLTMxNgotNDI2IC0zNjQgLTUzMCAtNDUgLTk5IC05NyAtMjIzIC0xMzEgLTMxNSAtMTggLTQ5IC01MCAtMTI4IC03MCAtMTc0IC0yMCAtNDYKLTQ4IC0xMzYgLTYyIC0yMDAgLTE0IC02NCAtMzcgLTE3NCAtNTIgLTI0NiAtMzQgLTE1OSAtNDkgLTE5MSAtMTA0IC0yMTYgLTUxCi0yMyAtNzYgLTIzIC0xNTIgLTQgLTE1NSA0MSAtMjc0IDExNSAtNDM2IDI3MiAtMjAzIDE5NyAtMzUyIDQxOCAtNDE0IDYxMwotMjUgNzkgLTQxIDEwNyAtOTQgMTYzIC0xMDQgMTEyIC0xODcgMTM1IC0yODcgNzcgLTI5IC0xNiAtNjggLTQ4IC04NyAtNzEKLTU5IC02OCAtNjkgLTExMSAtNzQgLTMxMCAtMTAgLTM3MiA0MyAtNTYxIDI0MCAtODQ5IDYwIC04NyA5NyAtMTI3IDIxOSAtMjM1CjE1MSAtMTM1IDE1NCAtMTM2IDUxNyAtMzQwIDY2IC0zNyAxNDEgLTcwIDIxMCAtOTAgNDA4IC0xMjMgMzg5IC0xMTYgNDMzCi0xNjIgMzQgLTM1IDUwIC04MiA3OCAtMjE5IDE2IC03OCAzOCAtMTQzIDc2IC0yMjkgOTEgLTE5OSAyMDUgLTQxNyAyNDkgLTQ3NQoxNDcgLTE5MCAzMzIgLTM3MCA1MTAgLTQ5NSA4MSAtNTYgMzEyIC0xNzYgNDI3IC0yMjEgNTEgLTIwIDEzMSAtNTEgMTc4IC02OQoxMDYgLTQxIDM5NSAtOTkgNTk4IC0xMTkgMjA5IC0yMiA2NTcgLTIyIDgyNCAwIDE1NyAyMCA0MTYgODUgNDcyIDExOCA2NCAzNwoxNTQgMTIzIDE3OSAxNzAgMTkgMzUgMjIgNTcgMjIgMTQ2IDAgOTQgLTMgMTExIC0yNyAxNjMgLTM1IDc0IC0xMzIgMTcxIC0yMDQKMjA0IC03MSAzMiAtMTYwIDQwIC01NDkgNDcgLTE3NiA0IC0zNzggMTEgLTQ1MCAxNyAtMjg1IDIyIC02NTQgNjAgLTcyMCA3NAotMTY4IDM1IC00MDkgMTk3IC01OTEgMzk3IC04NCA5MyAtMTI3IDE1OCAtMTgyIDI4MiAtODUgMTg4IC02MyAyNDUgMTIyIDMxMAo1NSAyMCAxNTUgNDkgMjIwIDY2IDY2IDE3IDE1OCA0OCAyMDUgNjkgNDcgMjIgMTE1IDUxIDE1MSA2NCAzNiAxNCA5MCAzNyAxMjAKNTIgMzAgMTYgOTggNDcgMTUwIDcwIDE5MyA4NCA0NTcgMjUzIDYxNSAzOTUgNTAgNDQgMTMzIDExOSAxODYgMTY2IDEwMCA4OAoyNzAgMjc5IDM1NiAzOTkgMjggMzkgODUgMTM4IDEyNyAyMjAgNzAgMTM3IDgwIDE2NCAxMTIgMzA1IDMyIDEzOSAzNSAxNzAgMzUKMjk3IDAgNzggLTUgMTY4IC0xMSAyMDAgLTIyIDEyNCAtNzIgMjkwIC0xMTQgMzgzIC0yNSA1MyAtNTMgMTE3IC02MiAxNDEgLTQ5CjEyNyAtMjAwIDMwNiAtMzU3IDQyNSAtNzIgNTQgLTExNSA3NSAtMjg3IDEzNSBsLTEyNSA0NCAtMjAwIDIgYy0xMzQgMSAtMjIzCi0yIC0yNzAgLTExeiBtNDA0IC04OTggYzYxIC0yOSAxNTEgLTEyMCAxODcgLTE4OSAyOCAtNTMgMjkgLTU4IDI5IC0yMDkgMAotMTgzIC0xNSAtMjQ1IC05MSAtMzc1IC0xMzUgLTIzMCAtMzU5IC00NDIgLTYyNSAtNTg4IC0xNzAgLTk0IC00MTggLTIxNAotNDY5IC0yMjcgLTI1IC03IC0xMDggLTMyIC0xODUgLTU3IC0xNTMgLTQ5IC0yMDEgLTUyIC0yMzkgLTEzIC0zNCAzNCAtMjUKMTE1IDM5IDM1NSA1NSAyMDkgNjAgMjIzIDIwMSA1MjAgMTIwIDI1NCAyOTggNDY3IDUxOCA2MjAgMTEyIDc3IDE0NSA5NCAyNjcKMTM0IDE5OSA2NiAyNzkgNzIgMzY4IDI5eiIvPjwvZz48L3N2Zz4=" alt="" width="45" height="45"></button>
     </nav>
     <nav class="panneau" id="panneau" hidden aria-label="Menu">
+      <a href="/">Accueil</a>
       <a href="/#cabinet">Le cabinet</a>
       <a href="/#expertises">Domaines</a>
       <a href="/#dossiers">Dossiers</a>

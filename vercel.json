@@ -2,22 +2,67 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/accueil", "destination": "/", "permanent": true },
-    { "source": "/lecabinet", "destination": "/#cabinet", "permanent": true },
-    { "source": "/competences", "destination": "/#expertises", "permanent": true },
-    { "source": "/actualit%C3%A9s", "destination": "/#publications", "permanent": true },
-    { "source": "/actualités", "destination": "/#publications", "permanent": true },
-    { "source": "/about", "destination": "/#cabinet", "permanent": true },
-    { "source": "/contact", "destination": "/#contact", "permanent": true }
+    {
+      "source": "/accueil",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lecabinet",
+      "destination": "/#cabinet",
+      "permanent": true
+    },
+    {
+      "source": "/competences",
+      "destination": "/#expertises",
+      "permanent": true
+    },
+    {
+      "source": "/actualit%C3%A9s",
+      "destination": "/#publications",
+      "permanent": true
+    },
+    {
+      "source": "/actualités",
+      "destination": "/#publications",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/#cabinet",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/avocat",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        }
       ]
     }
   ]

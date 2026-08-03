@@ -14,7 +14,6 @@
 
 ## Pages
 - [Accueil](https://www.micheleesposito.fr/) : présentation du cabinet, domaines, dimension internationale, questions fréquentes
-- [L'avocat](https://www.micheleesposito.fr/avocat) : Maître Michele Esposito, parcours et convictions
 - [Droit des sociétés](https://www.micheleesposito.fr/droit-des-societes) : structuration, holdings internationales, pactes, contentieux entre associés
 - [Droit des affaires](https://www.micheleesposito.fr/droit-des-affaires) : rupture brutale, concurrence déloyale, recouvrement, exécution internationale
 - [Droit des contrats](https://www.micheleesposito.fr/droit-des-contrats) : rédaction, contrats internationaux, Rome I, CVIM, contentieux
