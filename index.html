@@ -231,7 +231,8 @@ header nav:not(.panneau){display:flex;align-items:center;justify-content:space-b
 .marque span{color:var(--vert);font-size:1.35em;font-weight:700;-webkit-text-stroke:1px var(--vert);line-height:0}
 
 /* ---------- héro ---------- */
-.hero{padding:96px 0 78px}
+.trait{width:84px;height:7px;background:var(--vert);margin:26px auto 0}
+.hero{padding:84px 0 40px}
 .hero h1{
   font-size:clamp(34px,5.2vw,58px);
   letter-spacing:.015em;
@@ -253,9 +254,7 @@ header nav:not(.panneau){display:flex;align-items:center;justify-content:space-b
   font-size:clamp(12px,1.6vw,15px);
   letter-spacing:.32em;
   color:var(--gris);
-  border-top:1px solid var(--hairline);
-  border-bottom:1px solid var(--hairline);
-  padding:16px 0;
+  padding:10px 0 0;
   text-transform:uppercase;
   white-space:normal;
   line-height:2.1;
@@ -264,7 +263,7 @@ header nav:not(.panneau){display:flex;align-items:center;justify-content:space-b
 .linteau b{color:var(--marine);font-weight:400;padding:0 .5em}
 
 /* ---------- sections ---------- */
-section{padding:88px 0;border-top:1px solid var(--hairline)}
+section{padding:60px 0 72px;border-top:1px solid var(--hairline)}
 .deux-colonnes{display:grid;gap:56px}
 @media(min-width:900px){.deux-colonnes{grid-template-columns:1fr 1fr;margin-left:72px}}
 
@@ -327,7 +326,7 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
 .breadcrumb{display:block;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);padding:34px 0 0}
 .breadcrumb a{border:none;color:var(--gris)}
 .breadcrumb a:hover{color:var(--vert)}
-.page-hero{padding:44px 0 64px}
+.page-hero{padding:36px 0 48px}
 .page-hero h1{font-size:clamp(32px,5vw,54px);letter-spacing:.02em;line-height:1.12;margin-bottom:22px}
 .chapo{font-size:clamp(19px,2.2vw,22px);font-weight:300;line-height:1.6;color:var(--encre);max-width:60ch}
 .prose h2{font-size:clamp(24px,3vw,31px);margin:56px 0 20px}
@@ -395,6 +394,7 @@ footer .cab{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.12em;co
       <p class="these">Conseil et contentieux pour les entreprises, les groupes, les fonds, les dirigeants et les patrimoines privés, partout où leurs enjeux les portent.</p>
     </div>
     <p class="linteau">France <b>·</b> Monaco <b>·</b> Italie <b>·</b> Luxembourg <b>·</b> Suisse <b>·</b> Royaume-Uni</p>
+    <div class="trait" aria-hidden="true"></div>
   </section>
 
   <!-- ===================== LE CABINET ===================== -->
